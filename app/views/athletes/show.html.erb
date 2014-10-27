@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @athlete.age %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @athlete.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @athlete.weight %>
+</p>
+
+<p>
+  <strong>Body mass index:</strong>
+  <%= @athlete.body_mass_index %>
+</p>
+
+<p>
+  <strong>Blood pressure:</strong>
+  <%= @athlete.blood_pressure %>
+</p>
+
+<p>
+  <strong>Cholesterol:</strong>
+  <%= @athlete.cholesterol %>
+</p>
+
+<%= link_to 'Edit', edit_athlete_path(@athlete) %> |
+<%= link_to 'Back', athletes_path %>

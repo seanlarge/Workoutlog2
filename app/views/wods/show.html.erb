@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pr:</strong>
+  <%= @wod.pr %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @wod.score %>
+</p>
+
+<p>
+  <strong>Benchmark:</strong>
+  <%= @wod.benchmark %>
+</p>
+
+<%= link_to 'Edit', edit_wod_path(@wod) %> |
+<%= link_to 'Back', wods_path %>

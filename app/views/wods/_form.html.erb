@@ -1,0 +1,36 @@
+<%= form_for(@wod) do |f| %>
+  <% if @wod.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wod.errors.count, "error") %> prohibited this wod from being saved:</h2>
+
+      <ul>
+      <% @wod.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.fields_for(:movements, ) do |wm| %>
+    <div class="field">
+     <%= wm.label "List of Movements" %><br>
+     <%= collection_select(:movements, :id, @all_movements, :id, :name, {}, {:multiple =>  true}) %>
+   </div>
+   <% end %>
+
+  <div class="field">
+    <%= f.label :pr %><br>
+    <%= f.check_box :pr %>
+  </div>
+  <div class="field">
+    <%= f.label :score %><br>
+    <%= f.text_field :score %>
+  </div>
+  <div class="field">
+    <%= f.label :benchmark %><br>
+    <%= f.check_box :benchmark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
