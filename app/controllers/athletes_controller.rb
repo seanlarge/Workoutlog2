@@ -1,5 +1,7 @@
 class AthletesController < ApplicationController
+  skip_before_action :require_signin, only: [:new, :create]
   before_action :set_athlete, only: [:show, :edit, :update, :destroy]
+
 
   # GET /athletes
   # GET /athletes.json
@@ -10,6 +12,7 @@ class AthletesController < ApplicationController
   # GET /athletes/1
   # GET /athletes/1.json
   def show
+    @athletes = Athlete.find(params[:id])
   end
 
   # GET /athletes/new
@@ -69,6 +72,7 @@ class AthletesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def athlete_params
-      params.require(:athlete).permit(:age, :height, :weight, :body_mass_index, :blood_pressure, :cholesterol)
+      params.require(:athlete).permit(:name, :email, :password, :password_confirmation, :age, :height, :weight, :body_mass_index, :blood_pressure, :cholesterol)
     end
+
 end

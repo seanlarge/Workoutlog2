@@ -1,0 +1,18 @@
+<h1>Login</h1>
+
+<%= render 'common/flash' %>
+
+<%= form_for :session, url: 'athletes#show' do |f| %>
+
+   <%= f.label :email %>
+   <%= f.text_field :email %>
+
+   <%= f.label :password %>
+   <%= f.password_field :password %>
+
+   <%= f.submit 'Sign In', id: 'signin' %>
+<% end %>
+
+<h1><%= link_to 'Create Profile', new_athlete_path %> </h1>
+
+
