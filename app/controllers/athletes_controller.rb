@@ -1,5 +1,4 @@
 class AthletesController < ApplicationController
-  skip_before_action :require_signin, only: [:new, :create]
   before_action :set_athlete, only: [:show, :edit, :update, :destroy]
 
 
