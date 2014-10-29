@@ -1,7 +1,7 @@
 class AthletesController < ApplicationController
   before_action :authenticate_athlete!
   before_action :set_athlete, only: [:show, :edit, :update, :destroy]
-  # attr_accessor :photo_file_name
+  # attr_accessor :avatar_file_name
 
   # GET /athletes
   # GET /athletes.json
@@ -72,7 +72,7 @@ class AthletesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def athlete_params
-    params.require(:athlete).permit(:photo, :age, :height, :weight, :body_mass_index, :blood_pressure, :cholesterol)
+    params.require(:athlete).permit(:avatar, :age, :height, :weight, :body_mass_index, :blood_pressure, :cholesterol)
   end
 
 end
