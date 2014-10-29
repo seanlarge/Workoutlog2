@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   #     post 'toggle'
   #   end
   #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+  #   resources :avatars, concerns: :toggleable
 
   # Example resource route within a namespace:
   #   namespace :admin do

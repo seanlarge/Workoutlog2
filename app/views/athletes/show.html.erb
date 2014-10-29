@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-  <%= image_tag @athlete.photo.url %>
+  <%= image_tag @athlete.avatar.url(:medium) %>
 
 <p>
   <strong>Age:</strong>
@@ -31,11 +31,15 @@
   <strong>Cholesterol:</strong>
   <%= @athlete.cholesterol %>
 </p>
+<%= link_to 'Update Stats', edit_athlete_path(@athlete) %>
 
 <h2>WOD</h2>
 
 <% @athlete.wods.each do |wod| %>
   <tr>
+    <% wod.movements.each do |mov| %>
+      <td><%= mov.name %></td>
+    <% end %>
     <td><%= wod.pr %></td>
     <td><%= wod.score %></td>
     <td><%= wod.benchmark %></td>
@@ -43,8 +47,12 @@
   </tr>
 <% end %>
 
+
+
+
+
 <h2>Create a new WOD</h2>
 <%= render partial: '/wods/form', locals: { wod: @athlete.wods.build }  %>
 
-<%= link_to 'Edit', edit_athlete_path(@athlete) %> |
-<%= link_to 'Back', athletes_path %>
+
+

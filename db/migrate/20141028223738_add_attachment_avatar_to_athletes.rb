@@ -1,11 +1,11 @@
-class AddAttachmentphotoToAthletes < ActiveRecord::Migration
+class AddAttachmentavatarToAthletes < ActiveRecord::Migration
   def self.up
     change_table :athletes do |t|
-      t.attachment :photo
+      t.attachment :avatar
     end
   end
 
   def self.down
-    remove_attachment :athletes, :photo
+    remove_attachment :athletes, :avatar
   end
 end

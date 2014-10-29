@@ -5,8 +5,6 @@ class RegistrationsController < Devise::RegistrationsController
     "/athletes/#{resource.id}/edit"
   end
 
-  def photo_content_type
 
-  end
 
 end
