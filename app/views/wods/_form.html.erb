@@ -1,20 +1,23 @@
-<%= form_for(@wod) do |f| %>
-  <% if @wod.errors.any? %>
+<% wod ||= @wod %>
+
+<%= form_for(wod) do |f| %>
+  <% if wod.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@wod.errors.count, "error") %> prohibited this wod from being saved:</h2>
+      <h2><%= pluralize(wod.errors.count, "error") %> prohibited this wod from being saved:</h2>
 
       <ul>
-      <% @wod.errors.full_messages.each do |message| %>
+      <% wod.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
+  <%= f.hidden_field :athlete_id %>
   <%= f.fields_for(:movements, ) do |wm| %>
     <div class="field">
      <%= wm.label "List of Movements" %><br>
-     <%= collection_select(:movements, :id, @all_movements, :id, :name, {}, {:multiple =>  true}) %>
+     <%= collection_select(:movements, :id, wod.possible_movements, :id, :name, {}, {:multiple =>  true}) %>
    </div>
    <% end %>
 

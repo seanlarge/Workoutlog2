@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+  <p>
+    <%= "Choose a Profile Picture"%> <br>
+     <%= f.file_field :photo %>
+  </p>
+  <br>
+
   <div class="field">
     <%= f.label :age %><br>
     <%= f.number_field :age %>

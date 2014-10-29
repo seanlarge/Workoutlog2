@@ -1,6 +1,7 @@
 class AthletesController < ApplicationController
+  before_action :authenticate_athlete!
   before_action :set_athlete, only: [:show, :edit, :update, :destroy]
-
+  # attr_accessor :photo_file_name
 
   # GET /athletes
   # GET /athletes.json
@@ -64,14 +65,14 @@ class AthletesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_athlete
-      @athlete = Athlete.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_athlete
+    @athlete = Athlete.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def athlete_params
-      params.require(:athlete).permit(:name, :email, :password, :password_confirmation, :age, :height, :weight, :body_mass_index, :blood_pressure, :cholesterol)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def athlete_params
+    params.require(:athlete).permit(:photo, :age, :height, :weight, :body_mass_index, :blood_pressure, :cholesterol)
+  end
 
 end
