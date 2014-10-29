@@ -1,4 +1,5 @@
 class WodsController < ApplicationController
+  before_action :authenticate_athlete!
   before_action :set_wod, only: [:show, :edit, :update, :destroy]
 
   # GET /wods
@@ -10,12 +11,12 @@ class WodsController < ApplicationController
   # GET /wods/1
   # GET /wods/1.json
   def show
+    @wods = Wod.where(athlete_id: current_athlete.id)
   end
 
   # GET /wods/new
   def new
     @wod = Wod.new
-    @all_movements = Movement.all
     @wod_movement = @wod.wod_movements.build
 
   end
@@ -78,6 +79,6 @@ class WodsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def wod_params
-    params.require(:wod).permit(:pr, :score, :benchmark)
+    params.require(:wod).permit(:athlete_id, :pr, :score, :benchmark)
   end
 end

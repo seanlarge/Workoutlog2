@@ -1,4 +1,5 @@
 class MovementsController < ApplicationController
+  before_action :authenticate_athlete!
   before_action :set_movement, only: [:show, :edit, :update, :destroy]
 
   # GET /movements
