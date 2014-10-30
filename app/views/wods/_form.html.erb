@@ -19,16 +19,18 @@
      <%= wm.label "List of Movements" %><br>
      <%= collection_select(:movements, :id, wod.possible_movements, :id, :name, {}, {:multiple =>  true}) %>
    </div>
-   <% end %>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :score %><br>
+    <%= f.text_field :score %>
+  </div>
 
   <div class="field">
     <%= f.label :pr %><br>
     <%= f.check_box :pr %>
   </div>
-  <div class="field">
-    <%= f.label :score %><br>
-    <%= f.text_field :score %>
-  </div>
+
   <div class="field">
     <%= f.label :benchmark %><br>
     <%= f.check_box :benchmark %>

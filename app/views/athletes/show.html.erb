@@ -40,8 +40,8 @@
     <% wod.movements.each do |mov| %>
       <td><%= mov.name %></td>
     <% end %>
-    <td><%= wod.pr %></td>
     <td><%= wod.score %></td>
+    <td><%= wod.pr %></td>
     <td><%= wod.benchmark %></td>
     <td><%= link_to 'Edit', edit_wod_path(wod),id:'edit#{wod.id}' %></td>
   </tr>
