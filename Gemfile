@@ -33,6 +33,7 @@ group :development, :test do
 end
 gem 'devise', '~> 3.4.0'
 gem "paperclip", "~> 4.2"
+gem 'passenger'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

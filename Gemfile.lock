@@ -53,6 +53,7 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.8.9)
+    daemon_controller (1.2.0)
     debugger-linecache (1.2.0)
     devise (3.4.0)
       bcrypt (~> 3.0)
@@ -88,6 +89,10 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    passenger (4.0.53)
+      daemon_controller (>= 1.2.0)
+      rack
+      rake (>= 0.8.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -181,6 +186,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 4.2)
+  passenger
   pry-byebug
   rails (= 4.1.6)
   rspec-rails
