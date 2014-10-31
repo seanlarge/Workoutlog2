@@ -75,24 +75,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  # config.paperclip_defaults = {
-  #   :storage => :s3,
-  #   :s3_credentials => {
-  #     :bucket => ENV['S3_BUCKET_NAME'],
-  #     :aws_key => ENV['AWS_ACCESS_KEY_ID'],
-  #     :aws_secret => ENV['AWS_SECRET_ACCESS_KEY']
-  #   }
-  # }
 
-
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_protocol => 'http',
-    :bucketname => ENV['AWS_BUCKET'],
-    :s3_credentials => {
+  Paperclip::Attachment.default_options.merge!(
+    :storage => :fog,
+    :fog_credentials => {
+    :provider => 'AWS',
       :aws_key => ENV['AWS_ACCESS_KEY_ID'],
       :aws_secret => ENV['AWS_SECRET_ACCESS_KEY']
-    }
-  }
+    },
+  :fog_directory => ENV['S3_BUCKET'], # only one of those is needed but I don't remember which
+  :bucket => ENV['S3_BUCKET']
+  )
 
 end

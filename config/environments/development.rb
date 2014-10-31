@@ -36,14 +36,17 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   Paperclip.options[:command_path] = "/usr/local/bin/"
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_protocol => 'http',
-    :bucketname => ENV['AWS_BUCKET'],
-    :s3_credentials => {
+  Paperclip::Attachment.default_options.merge!(
+    :storage => :fog,
+    :fog_credentials => {
+    :provider => 'AWS',
       :aws_key => ENV['AWS_ACCESS_KEY_ID'],
       :aws_secret => ENV['AWS_SECRET_ACCESS_KEY']
-    }
-  }
+    },
+  :fog_directory => ENV['S3_BUCKET'], # only one of those is needed but I don't remember which
+  :bucket => ENV['S3_BUCKET']
+  )
+
+
 
 end
