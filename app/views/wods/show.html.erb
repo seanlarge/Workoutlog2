@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <% @wod.movements.each do |mov| %>
+      <td><%= mov.name %></td>
+    <% end %>
+</p>
 
 <p>
   <strong>Score:</strong>
