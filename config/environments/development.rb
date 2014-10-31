@@ -1,3 +1,5 @@
+# Load application ENV vars and merge with existing ENV vars. Loaded here so can use values in initializers.
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -40,11 +42,11 @@ Rails.application.configure do
     :storage => :fog,
     :fog_credentials => {
     :provider => 'AWS',
-      :aws_key => ENV['AWS_ACCESS_KEY_ID'],
-      :aws_secret => ENV['AWS_SECRET_ACCESS_KEY']
+      :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     },
-  :fog_directory => ENV['S3_BUCKET'], # only one of those is needed but I don't remember which
-  :bucket => ENV['S3_BUCKET']
+  :fog_directory => ENV['S3_BUCKET_NAME'], # only one of those is needed but I don't remember which
+  :bucket => ENV['S3_BUCKET_NAME']
   )
 
 

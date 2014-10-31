@@ -1,4 +1,5 @@
-<%= form_for(@athlete) do |f| %>
+<%= form_for @athlete, :html => { :multipart => true } do |f| %>
+
   <% if @athlete.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@athlete.errors.count, "error") %> prohibited this athlete from being saved:</h2>
@@ -13,7 +14,7 @@
 
   <p>
     <%= "Choose a Profile Picture"%> <br>
-     <%= f.file_field :avatar %>
+    <%= f.file_field :avatar %>
   </p>
   <br>
 
