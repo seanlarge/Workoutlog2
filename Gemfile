@@ -40,8 +40,16 @@ gem 'aws-sdk'
 
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
+  gem 'rails_12factor', '~> 0.0.3'
 end
+
+
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'fog'
+gem 'sprockets-rails', '~> 2.1.4'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

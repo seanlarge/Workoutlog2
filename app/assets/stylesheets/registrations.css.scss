@@ -1,3 +1,36 @@
-// Place all the styles related to the Registrations controller here.
+/*// Place all the styles related to the Registrations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+
+body {
+  /*background: image-url('crossfit.png') no-repeat;*/
+  background-size: cover;
+  min-height: 100%;
+}
+
+h2 {
+
+  font-size: 28px;
+  color:red;
+}
+
+ .login  {
+  /*margin-top: 400px;*/
+  hight:500px;
+  width:300px;
+  clear:both;
+  padding: 30px;
+  float: right;
+  margin-bottom: 300px;
+
+}
+
+.signup.col-xs-4 {
+
+  clear: both;
+  hight:500px;
+  width:300px;
+  padding:30px;
+
+}
