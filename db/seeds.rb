@@ -8,8 +8,6 @@
 Movement.create(name:'Air Squat', description: "Keeping chest upright send hips back as if going to sit on a chair. Squat until you are just below parallel", equipment: 'Body weight')
 Movement.create(name:'Back Squat', description:"Same as air squat but with weight", equipment:"Barbell and weight if needed")
 Movement.create(name:'(Medicine) Ball Slams')
-Movement.create(name:'Air Squat')
-
 Movement.create(name:'Barbell Snatch')
 Movement.create(name:'Box Jump')
 Movement.create(name:'Burbee Box Jumps')
