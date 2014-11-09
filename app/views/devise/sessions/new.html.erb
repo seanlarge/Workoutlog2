@@ -4,49 +4,54 @@
   </video> -->
 <body class= "body">
 
-
+<div class"black" >
     <div class="container">
       <div class="row">
-         <div class=".col-lg-4">
+      <div class"black" >
+         <div class="col-lg-10 col-md-10 col-xs-8">
+
             <h2>Log in</h2>
 
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div><%= f.label :email %><br />
+              <div class="whitefont"><%= f.label :email %><br />
               <%= f.email_field :email, autofocus: true %></div>
 
-              <div><%= f.label :password %><br />
+              <div class="whitefont"><%= f.label :password %><br />
                 <%= f.password_field :password, autocomplete: "off" %></div>
 
               <% if devise_mapping.rememberable? -%>
-                <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+                <div class="whitefont"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
               <% end -%>
 
               <div><%= f.submit "Log in" %></div>
             <% end %>
+            <%= render "devise/shared/links" %>
+
+           </div>
           </div>
 
-
-            <div class=".col-lg-6">
+            <div class="black">
+            <div class="col-lg-2 col-md-2 col-xs-8">
               <h2>Sign up</h2>
 
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                 <%= devise_error_messages! %>
 
-                <div><%= f.label :email %><br />
+                <div class="whitefont"><%= f.label :email %><br />
                 <%= f.email_field :email, autofocus: true %></div>
 
-                <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+                <div class="whitefont"><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
                   <%= f.password_field :password, autocomplete: "off" %></div>
 
-                <div><%= f.label :password_confirmation %><br />
+                <div class="whitefont"><%= f.label :password_confirmation %><br />
                   <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-                <div><%= f.submit "Sign up" %></div>
-              <% end %>
-              <div class="col-xs-12 col-md-4 col-sm-offset-3 col-md-offset-0">
-                <%= render "devise/shared/links" %>
+                  <div><%= f.submit "Sign up" %></div>
+                <% end %>
               </div>
           </div>
+        </div>
       </div>
   </div>
+
 </body>
