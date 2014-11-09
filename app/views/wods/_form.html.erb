@@ -13,12 +13,13 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field :athlete_id %>
-  <%= f.fields_for(:movements, ) do |wm| %>
+    <%= f.hidden_field :athlete_id %>
+    <%= f.fields_for(:movements, ) do |wm| %>
     <div class="field">
      <%= wm.label "List of Movements" %><br>
-     <%= collection_select(:movements, :id, wod.possible_movements, :id, :name, {}, {:multiple =>  true}) %>
-   </div>
+      <%= collection_select(:movements, :id, wod.possible_movements, :id, :name, {}, {:multiple =>  true}) %>
+    </div>
+
   <% end %>
 
   <div class="field">
