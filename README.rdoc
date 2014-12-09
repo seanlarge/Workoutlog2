@@ -1,8 +1,12 @@
 == README
-The crossfit log repository is incorrect. this is the correct repository 
+
 Crossfit Workout Log for 'athletes' to record their workouts and see their progress over time
 
 This web app will allow a user(hereby referred to as 'athlete' to create a profile where they can record their workouts daily. Athlete will be able to record the Benchmark workouts of crossfit and see their progress over time. Athlete will be able to record and see max lifts/Pr's over time as well.
 
-Lin to workout log below:
-https://intense-ridge-4515.herokuapp.com/athletes/sign_in 
+database is complete with a list of current Crossfit movements from Air squats to 1000meter row.
+
+
+
+Link to workout log below:
+https://datafit.herokuapp.com/
